@@ -42,7 +42,7 @@ class Astoundify_Job_Manager_Regions_Template extends Astoundify_Job_Manager_Reg
 	 */
 	public function submit_job_form_fields( $fields ) {
 		$fields[ 'job' ][ 'job_region' ] = array(
-			'label'       => __( 'Job Region', 'wp-job-manager-locations' ),
+			'label'       => __( 'Book Genre', 'wp-job-manager-locations' ),
 			'type'        => 'term-select',
 			'taxonomy'    => 'job_listing_region',
 			'required'    => true,
@@ -62,7 +62,7 @@ class Astoundify_Job_Manager_Regions_Template extends Astoundify_Job_Manager_Reg
 		}
 
 		wp_dropdown_categories( apply_filters( 'job_manager_regions_dropdown_args', array(
-			'show_option_all' => __( 'All Regions', 'wp-job-manager-locations' ),
+			'show_option_all' => __( 'Any Book Genre', 'wp-job-manager-locations' ),
 			'hierarchical' => true,
 			'orderby' => 'name',
 			'taxonomy' => 'job_listing_region',

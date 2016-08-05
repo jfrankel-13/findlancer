@@ -66,12 +66,12 @@ class WP_Job_Manager_Post_Types {
 		 * Taxonomies
 		 */
 		if ( get_option( 'job_manager_enable_categories' ) ) {
-			$singular  = __( 'Job category', 'wp-job-manager' );
-			$plural    = __( 'Job categories', 'wp-job-manager' );
+			$singular  = __( 'Editor Speciality', 'wp-job-manager' );
+			$plural    = __( 'Editor Specialities', 'wp-job-manager' );
 
 			if ( current_theme_supports( 'job-manager-templates' ) ) {
 				$rewrite   = array(
-					'slug'         => _x( 'job-category', 'Job category slug - resave permalinks after changing this', 'wp-job-manager' ),
+					'slug'         => _x( 'job-category', 'Editor speciality slug - resave permalinks after changing this', 'wp-job-manager' ),
 					'with_front'   => false,
 					'hierarchical' => false
 				);
@@ -113,8 +113,8 @@ class WP_Job_Manager_Post_Types {
 		    );
 		}
 
-	    $singular  = __( 'Job type', 'wp-job-manager' );
-		$plural    = __( 'Job types', 'wp-job-manager' );
+	    $singular  = __( 'Book Genre', 'wp-job-manager' );
+		$plural    = __( 'Book Genres', 'wp-job-manager' );
 
 		if ( current_theme_supports( 'job-manager-templates' ) ) {
 			$rewrite   = array(

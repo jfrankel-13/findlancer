@@ -33,7 +33,7 @@ $atts = apply_filters( 'job_manager_ouput_jobs_defaut', array(
 
         <div class="search_categories">
             <label for="search_categories"><?php _e( 'Category', 'listify-child-child' ); ?></label>
-            <?php job_manager_dropdown_categories( array( 'taxonomy' => 'job_listing_category', 'hierarchical' => 1, 'show_option_all' => __( 'Editor Speciality', 'listify-child' ), 'name' => 'search_categories', 'orderby' => 'name', 'multiple' => false ) ); ?>
+            <?php job_manager_dropdown_categories( array( 'taxonomy' => 'job_listing_category', 'hierarchical' => 1, 'show_option_all' => __( 'Any Editor Speciality', 'listify-child' ), 'name' => 'search_categories', 'orderby' => 'name', 'multiple' => false ) ); ?>
         </div>
 
         <?php endif; ?>

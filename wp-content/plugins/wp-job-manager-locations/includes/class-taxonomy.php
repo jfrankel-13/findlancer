@@ -14,8 +14,8 @@ class Astoundify_Job_Manager_Regions_Taxonomy extends Astoundify_Job_Manager_Reg
 	public function register_taxonomy() {
 		$admin_capability = 'manage_job_listings';
 
-		$singular  = __( 'Job Region', 'wp-job-manager-locations' );
-		$plural    = __( 'Job Regions', 'wp-job-manager-locations' );
+		$singular  = __( 'Book Genre', 'wp-job-manager-locations' );
+		$plural    = __( 'Book Genres', 'wp-job-manager-locations' );
 
 		if ( current_theme_supports( 'job-manager-templates' ) ) {
 			$rewrite     = array(
