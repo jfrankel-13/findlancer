@@ -119,27 +119,31 @@ class Astoundify_Job_Manager_Contact_Listing_Form_NinjaForms extends Astoundify_
 		$forms  = array( 0 => __( 'Please select a form', 'wp-job-manager-contact-listing' ) );
 		$_forms = array();
 
-		if ( class_exists( 'Ninja_Forms' ) ) {
-
+		if ( version_compare( get_option( 'ninja_forms_version', '0.0.0' ), '3', '<' ) ) {
 			$f = Ninja_Forms()->forms()->get_all();
-
-			$_forms = array();
 			$x = 0;
-			foreach ( $f as $form_id ) {
-				$_forms[ $x ]['id'] = $form_id;
-				$_forms[ $x ]['data'] = Ninja_Forms()->form( $form_id )->get_all_settings();
-				$_forms[ $x ]['name'] = Ninja_Forms()->form( $form_id )->get_setting( 'form_title' );
-				$x++;
-			}
 
-		} elseif ( function_exists( 'ninja_forms_get_all_forms' ) ) {
-			$_forms = ninja_forms_get_all_forms();
+			foreach ( $f as $form_id ) {
+				$_forms[] = array(
+					'id' => $form_id,
+					'title' => Ninja_Forms()->form( $form_id )->get_setting( 'form_title' )
+				);
+			}
+		} else {
+			$f = Ninja_Forms()->form()->get_forms();
+
+			foreach ( $f as $form ) {
+				$_forms[] = array(
+					'id' => $form->get_id(),
+					'title' => $form->get_setting( 'title' )
+				);
+			}
 		}
 
 		if ( ! empty( $_forms ) ) {
 
 			foreach ( $_forms as $_form ) {
-				$forms[ $_form['id'] ] = $_form['data']['form_title'];
+				$forms[ $_form[ 'id' ] ] = $_form[ 'title' ];
 			}
 
 		}

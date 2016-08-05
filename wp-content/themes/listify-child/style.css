@@ -12,3 +12,9 @@ Domain Path: /languages/
 Tags: white, two-columns, one-column, right-sidebar, left-sidebar, responsive-layout, custom-background, custom-header, theme-options, full-width-template, featured-images, flexible-header, custom-menu, translation-ready
 Template: listify
 */
+.wp-job-manager-categories-enabled.wp-job-manager-categories-multi-enabled.home .search_jobs>div, .wp-job-manager-categories-enabled:not(.wp-job-manager-categories-multi-enabled) .search_jobs>div{
+	width: 47%;
+}
+.search_jobs>div:last-of-type, .wp-job-manager-categories-enabled.wp-job-manager-categories-multi-enabled.home .search_jobs>.search_categories, body.wp-job-manager-categories-enabled .search_jobs>div.search_categories, body.wp-job-manager-categories-multi-enabled .search_jobs .search_location, body.wp-job-manager-categories-multi-enabled .search_jobs .search_region, body:not(.wp-job-manager-categories-enabled) .search_jobs .search_location, body:not(.wp-job-manager-categories-enabled) .search_jobs .search_region{
+	margin-right: 3%;
+}
